@@ -1,0 +1,152 @@
+header {
+    background-color: cadetblue;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.logo {
+    width: 150px;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin-left: 20px;
+}
+
+.navbar ul li a {
+    color: #272D38;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 16px;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #ffffff;
+}
+
+#menu {
+    display: none;
+}
+
+.menu-icono {
+    width: 25px;
+    cursor: pointer;
+}
+
+.menu label {
+    display: none;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 120px 0 150px;
+}
+
+.header-txt {
+    width: 60%;
+}
+
+.header-txt h1 {
+    font-size: 45px;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.header-txt p {
+    font-size: 18px;
+    color: #272D38;
+}
+
+.header-img {
+    width: 35%;
+}
+
+.buss {
+    width: 100%;
+}
+
+.botones {
+    margin-top: 20px;
+}
+
+.btn-1 {
+    display: inline-block;
+    border: 1px solid #FDFDFD;
+    padding: 10px 35px;
+    color: #FDFDFD;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-1:hover {
+    background-color: #272D38;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu label {
+        display: block;
+    }
+
+    .navbar {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar ul li {
+        width: 100%;
+    }
+
+    #menu:checked + label + .navbar {
+        display: flex;
+    }
+
+    .header-content {
+        flex-direction: column;
+        padding: 60px 0;
+    }
+
+    .header-txt {
+        width: 100%;
+        text-align: center;
+    }
+
+    .header-img {
+        width: 80%;
+        margin-top: 20px;
+    }
+}

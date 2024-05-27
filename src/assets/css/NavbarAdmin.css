@@ -1,0 +1,98 @@
+.admin-container {
+  padding: 20px;
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  background: #f9f9f9;
+  width: calc(100% / 3 - 40px); /* 3 cards per row */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: calc(100% / 2 - 30px); /* 2 cards per row */
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 100%; /* 1 card per row */
+  }
+}
+
+/* Modal styles */
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.modal {
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 8px;
+  background: white;
+  max-width: 500px;
+  width: 100%;
+}
+
+.modal form div {
+  margin-bottom: 10px;
+}
+
+.modal form .button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal form button {
+  margin-left: 10px;
+}

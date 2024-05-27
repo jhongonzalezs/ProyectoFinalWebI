@@ -1,0 +1,76 @@
+/* App.css */
+
+.ReactModal__Overlay {
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+  
+  .ReactModal__Content {
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 8px;
+    background: white;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .ReactModal__Content form div {
+    margin-bottom: 10px;
+  }
+  
+  .ReactModal__Content form button {
+    margin-right: 10px;
+  }
+  
+
+
+
+  .crear-sala-container {
+    padding: 20px;
+  }
+  
+  .crear-sala-container h1 {
+    margin-bottom: 20px;
+  }
+  
+  .crear-sala-container form div {
+    margin-bottom: 15px;
+  }
+  
+  .crear-sala-container form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .crear-sala-container form input[type="text"],
+  .crear-sala-container form input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+  .crear-sala-container form input[type="checkbox"] {
+    margin-left: 5px;
+  }
+  
+  .crear-sala-container .button-container {
+    margin-top: 20px;
+  }
+  
+  .crear-sala-container .btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-size: 14px;
+  }
+  
+  .crear-sala-container .btn-primary {
+    background-color: #007bff;
+  }
+  

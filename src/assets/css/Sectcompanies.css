@@ -1,0 +1,38 @@
+section{
+    background-color: cadetblue;
+}
+.SectionCompanies{
+    width: 100%;
+    padding: 20px 30px 20px ;
+}
+.socialIcons{
+    display: flex;
+    justify-content: center;
+}
+.socialIcons a{
+    text-decoration: none;
+    padding:  10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+}
+.socialIcons a i{
+    font-size: 2em;
+    color: black;
+    opacity: 0,9;
+}
+
+.companies{
+    background-color: cadetblue;
+    padding: 20px;
+    text-align: center;
+}
+.companies p{
+    color: #101116;
+}
+@media (max-width: 1024px){
+    .socialIcons a{
+        padding: 8px;
+        margin: 4px;
+    }
+}
