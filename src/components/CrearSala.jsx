@@ -1,18 +1,27 @@
 import React, { useState } from 'react';
-import { db } from "../firebase";
+import { auth, db } from "../firebase";
 import { useNavigate } from 'react-router-dom';
 import NavbarAdmi from "./NavbarAdmi";
 import "../assets/css/CrearSala.css";
 
-
-
 function CrearSala() {
   const navigate = useNavigate();
+  const [user, setUser] = React.useState(null);
   const [nombre, setNombre] = useState('');
   const [descripcion, setDescripcion] = useState('');
   const [capacidad, setCapacidad] = useState('');
   const [ubicacion, setUbicacion] = useState('');
   const [disponibilidad, setDisponibilidad] = useState(true);
+
+  React.useEffect(() => {
+    if (auth.currentUser) {
+      setUser(auth.currentUser);
+    } else {
+      navigate('/login');
+    }
+  }, [navigate]);
+
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -69,12 +78,13 @@ function CrearSala() {
             />
           </div>
           <div>
-            <label>Disponibilidad:</label>
-            <input
-              type="checkbox"
-              checked={disponibilidad}
-              onChange={(e) => setDisponibilidad(e.target.checked)}
-            />
+            <label>Disponibilidad:
+              <input
+                type="checkbox"
+                checked={disponibilidad}
+                onChange={(e) => setDisponibilidad(e.target.checked)}
+              />
+            </label>
           </div>
           <div className="button-container">
             <button type="submit" className="btn btn-primary">Crear Sala</button>

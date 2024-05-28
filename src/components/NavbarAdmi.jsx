@@ -31,7 +31,7 @@ function NavbarAdmi() {
   return (
     <header>
       <div className="menu container">
-        <a><Link to="/user"><img src={logo} className="logo" alt="" /></Link></a>
+        <a><Link to="/admin"><img src={logo} className="logo" alt="" /></Link></a>
         <input type="checkbox" id="menu" />
         <label htmlFor="menu"><img src={menu} className="menu-icono" alt="menu" /></label>
         <nav className="navbar">
@@ -49,7 +49,7 @@ function NavbarAdmi() {
           <p style={{ color: '#272D38' }}>Vive la experiencia universitaria. Deporte, salud y bienestar.</p>
           {userName && <h2>Bienvenido, {userName}!</h2>}
           <div className="botones">
-            <a className="btn-1"><li><Link to="/user">Salas</Link></li></a>
+            <a className="btn-1"><li><Link to="/addsalas">Salas</Link></li></a>
           </div>
         </div>
 
