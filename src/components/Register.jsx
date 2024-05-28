@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Modal from 'react-modal';
+import { Link } from 'react-router-dom';  // Importa Link
 import '../assets/css/Form.css';
 import { auth, db } from "../firebase";
-import { Link } from 'react-router-dom';
 import Navbar from "./Navbar";
 
+Modal.setAppElement('#root'); // Esto es necesario para accesibilidad
 
 function Register() {
-  const [email, setEmail] = React.useState('');
-  const [pass, setPass] = React.useState('');
-  const [nombres, setNombres] = React.useState('');
-  const [apellidos, setApellidos] = React.useState('');
-  const [error, setError] = React.useState(null);
-  const [modoRegistro, setModoRegistro] = React.useState(true);
+  const [email, setEmail] = useState('');
+  const [pass, setPass] = useState('');
+  const [nombres, setNombres] = useState('');
+  const [apellidos, setApellidos] = useState('');
+  const [error, setError] = useState(null);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const openModal = () => setModalIsOpen(true);
+  const closeModal = () => setModalIsOpen(false);
 
   const guardarUsuarios = async (event) => {
     event.preventDefault();
@@ -40,6 +45,7 @@ function Register() {
       setNombres('');
       setApellidos('');
       setError(null);
+      openModal();  // Abrir el modal al completar el registro
     } catch (error) {
       console.log('Error en registro:', error.code, error.message);
       setError(error.message);
@@ -78,13 +84,26 @@ function Register() {
 
             <div className="d-grid gap-2">
               <button type="submit" className="btn btn-primary">Registrarse</button>
-              <div class="signin">
-                    <span>I already have an account <a><Link to="/login">Login Here</Link></a></span>
+              <div className="signin">
+                <span>I already have an account <Link to="/login">Login Here</Link></span>
               </div>
             </div>
           </div>
         </div>
       </form>
+
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        contentLabel="Registro Exitoso"
+        className="Modal"
+        overlayClassName="Overlay"
+      >
+        <h2>Usuario registrado correctamente</h2>
+        <Link to="/login">
+          <button onClick={closeModal}>Cerrar</button>
+        </Link>
+      </Modal>
     </React.Fragment>
   );
 }

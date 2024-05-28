@@ -8,6 +8,7 @@ import NavbarAdmin from "./components/NavbarAdmin";
 import CrearSala from "./components/CrearSala";
 
 
+
 function App() {
   {/**const [firebaseUser, setFirebaseUser] = useState(false)
   useEffect(() => {
@@ -19,8 +20,9 @@ function App() {
       }
     })
   })**/}
-  return  (
 
+  return  (
+    
     <React.Fragment>
       <Router>
         <Routes>
